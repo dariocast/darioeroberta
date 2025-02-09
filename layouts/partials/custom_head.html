@@ -1,0 +1,116 @@
+<!-- A partial to be overwritten by the user.
+     Its content will appear before the closing </head>-tag -->
+
+
+<!-- Custom CSS via inline styles
+     You may use this template to add custom CSS to your site like so: -->
+<style>
+     :root {
+          /* see variables.scss for more variables*/
+
+          --section-light-text-color: #000000 !important;
+          /* Black text */
+          --section-light-bg-color: #ffffff !important;
+          /* White background */
+          --section-dark-bg-color: #628ad0 !important;
+          /* Light blue background */
+
+          /* === General List Icon === */
+          --ul-li-icon: fa-asterisk;
+          /* Keeping default unless specified otherwise */
+
+          /* === Cover / Landing area === */
+          --cover-text-color: #000000;
+          /* Black text */
+          --highlight: #628ad0;
+          /* Light blue highlight */
+          --highlight-contrast: #ffffff;
+          /* Black for contrast */
+          --highlight-inverse: #000000;
+          /* Black inverse for hover */
+          --highlight-inverse-contrast: #ffffff;
+          /* White text on hover */
+
+          /* Visual guard around title and description */
+          --cover-title-and-description-guard-bg-color: rgba(255, 255, 255, 0.6);
+          /* Semi-transparent white */
+          --cover-title-text-shadow: #ffffff 0px 0px 7px;
+          /* White shadow */
+
+          /* === Sticky top/left navigation menus === */
+          --sticky-menu-text-color: #628ad0;
+          /* Light blue for sticky menu text */
+
+          /* === Alternating content (post) sections === */
+          /* Light section - text color */
+          --section-light-text-color: #000000;
+          /* Black text */
+          /* Light section - background color */
+          --section-light-bg-color: #ffffff;
+          /* White background */
+
+          /* Dark section - text color */
+          --section-dark-text-color: #ffffff;
+          /* White text for dark sections */
+          /* Dark section - background color */
+          --section-dark-bg-color: #628ad0;
+          /* Light blue background */
+
+          /* Light & Dark section >quote */
+          --section-uni-quote: #000000;
+          /* Black for quotes for clarity */
+
+          /* Light & Dark section `code` background */
+          --section-uni-code-bg-color: #e0eaf7;
+          /* Slightly lighter blue background for code blocks */
+
+          /* === Single pages === */
+          --single-page-text-color: #000000;
+          /* Black text */
+          --single-page-bg-color: #ffffff;
+          /* White background */
+
+          /* === Footer === */
+          --footer-color-background: #628ad0;
+          /* Light blue background */
+          --footer-color: #ffffff;
+          /* White text in the footer */
+
+          /* === Lists === */
+          --ul-li-icon: fa-asterisk;
+          /* Default list icon */
+
+     }
+
+     #blog-logo {
+          display: block;
+          max-height: 100px;
+          width: auto;
+          margin: 0 auto;
+          line-height: 0;
+     }
+</style>
+
+<!-- Custom CSS via "custom.css"-file
+     If you would rather place your custom CSS into
+     a separate file, create a "custom.css" in your
+     local "static/css"-directory. Then add a <link>-tag
+     referencing your "custom.css" like so: -->
+
+<!-- <link rel="stylesheet" href='{{ "css/custom.css" | absURL }}'> -->
+
+<!-- Custom CSS: Color Codes
+     You may checkout https://htmlcolorcodes.com/ to get those
+     weird color codes (like "#22343A") ;-). -->
+
+<!-- Custom link-tags for different icons
+     Generated via https://favicon.io/favicon-generator/ -->
+
+{{ with resources.Get "images/apple-touch-icon.png" }}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .RelPermalink }}" />{{ end }}
+{{ with resources.Get "images/favicon.svg" }}
+<link rel="icon" type="image/svg+xml" href="{{ .RelPermalink }}" />{{ end }}
+{{ range seq 9 4 }}{{ $size := pow 2 . }}{{ $file := replace "images/favicon-##x##.png" "##" $size }}{{ with
+resources.Get $file }}
+<link rel="icon" type="{{ .MediaType.Type }}" sizes="{{- $size -}}x{{- $size -}}" href="{{ .RelPermalink }}" />{{ end
+}}{{ end }}

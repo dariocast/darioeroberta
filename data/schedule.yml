@@ -1,0 +1,15 @@
+- time: "11:15"
+  title: "Cerimonia"
+  description: "La cerimonia si terrà nella chiesa di San Michele Arcangelo."
+
+- time: "13:00"
+  title: "Aperitivo"
+  description: "Aperitivo nel giardino della villa."
+
+- time: "15:00"
+  title: "Pranzo"
+  description: "Pranzo nel ristorante dell'hotel"
+
+- time: "19:00"
+  title: "Taglio della torta"
+  description: "Il taglio della torta avverrà sulla terrazza delle piscine."
