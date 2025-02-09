@@ -1,4 +1,6 @@
 baseURL = 'https://darioeroberta.it/'
+relativeURLs = false
+canonifyURLs = false
 
 theme = "hugo-scroll"
 
